@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS products (
+  id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  description TEXT,
+  price NUMERIC NOT NULL,
+  category TEXT,
+  image_url TEXT,
+  stock_quantity INTEGER DEFAULT 0,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+INSERT INTO products (name, price, image_url, category)
+VALUES 
+('Lash Trays', 25.00, 'classic.jpg', 'Trays'),
+('Lash Glue', 30.00, 'glue.jpg', 'Adhesives'),
+('Tweezers', 15.00, 'tweez1.jpg', 'Tools'),
+('Lash Fan', 20.00, 'lash_fan.jpg', 'Tools'),
+('Lash Chair', 150.00, 'lash_chair.jpg', 'Furniture'),
+('Lash Light', 85.00, 'lash_light.jpg', 'Lighting'),
+('Lash Spooly', 5.00, 'lash_spooly.jpg', 'Disposables'),
+('Lash Tape', 8.00, 'lash_tape.jpg', 'Disposables'),
+('Glue Shaker', 25.00, 'glue_shaker.jpg', 'Tools'),
+('Lash Mirror', 12.00, 'lash_mirror.jpg', 'Tools');
